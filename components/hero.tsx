@@ -1,6 +1,6 @@
 "use client";
 
-import { Rain } from "@/components/rain";
+import { Rain } from "@/components/animation/rain";
 import { siteMetadata } from "@/lib/data";
 import Image from "next/image";
 
