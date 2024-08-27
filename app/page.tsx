@@ -3,8 +3,12 @@ import BlurFadeText from "@/components/animation/blur-fade-text";
 import BlurFade from "@/components/animation/blur-fade";
 import { IconMapPin, IconBuildingBank } from "@tabler/icons-react";
 import DATA from "@/lib/data";
+import Nav from "@/components/nav";
+import Link from "next/link";
 
 const BLUR_FADE_DELAY = 0.1;
+
+const links = [{ href: "/blog", label: "Blog" }];
 
 export default function Home() {
   return (
@@ -19,14 +23,14 @@ export default function Home() {
             text={DATA.site.title}
           />
         </h1>
-        <p className="max-w-lg">
+        <div className="max-w-lg">
           <BlurFadeText
             delay={BLUR_FADE_DELAY * 5}
-            className="mt-8 max-w-lg space-y-6 text-lg leading-[1.4] text-gray-300 md:max-w-xl lg:text-xl"
+            className="mt-8 space-y-6 text-lg leading-[1.4] text-gray-300 md:max-w-xl lg:text-xl"
             yOffset={8}
             text={DATA.site.description}
           />
-        </p>
+        </div>
         <div className="pt-12 space-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 6}>
             <span className="flex gap-2">
@@ -41,9 +45,37 @@ export default function Home() {
         </div>
       </Hero>
 
-      <main className="mx-auto max-w-7xl w-full py-12 h-screen">
-        Hello, world!
-      </main>
+      <div>
+        <div className="sticky top-0 self-center">
+          <Nav>
+            <span className="font-bold">
+              <Link
+                href={"/"}
+                style={{ textDecoration: "none" }}
+                className="flex items-center justify-center w-6 h-6 p-4 font-mono [&>*]:no-underline border rounded-md border-white/5 hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors"
+              >
+                ~
+              </Link>
+            </span>
+
+            <div>
+              {links.map((link) => (
+                <Link
+                  key={`nav-link-${link.label}`}
+                  href={link.href}
+                  className="flex justify-center text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Nav>
+        </div>
+
+        <div className="h-full flex flex-col">
+          <main className="mx-auto max-w-7xl w-full px-6">Hello, world!</main>
+        </div>
+      </div>
     </>
   );
 }

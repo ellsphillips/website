@@ -20,7 +20,6 @@ export default function Hero({ children }: { children: React.ReactNode }) {
                   objectFit="cover"
                   quality={100}
                   priority
-                  layout="responsive"
                   width={2560}
                   height={1440}
                   className="absolute top-0 left-0 w-full min-h-[28rem] object-cover -scale-x-100"
