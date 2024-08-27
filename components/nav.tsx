@@ -57,7 +57,7 @@ export default function Nav({
         >
           <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6">
             <div className="flex items-center w-full">
-              <div className="space-x-10 border-r border-neutral-900/10 dark:border-white/10 py-0.5 w-full">
+              <div className="space-x-10 py-0.5 w-full">
                 <motion.nav
                   style={{
                     opacity: useTransform(
