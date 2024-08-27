@@ -1,10 +1,11 @@
 "use client";
 
 import { Rain } from "@/components/animation/rain";
-import { siteMetadata } from "@/lib/data";
 import Image from "next/image";
 
-export default function Hero() {
+import BlurFade from "./animation/blur-fade";
+
+export default function Hero({ children }: { children: React.ReactNode }) {
   return (
     <Rain>
       <section className="relative flex min-w-full flex-col border-b-2 border-sky-200 ">
@@ -46,12 +47,7 @@ export default function Hero() {
 
         <div className="mb-12 mt-64 border-white/[.03] md:mt-28 lg:my-28 lg:border-y lg:py-2">
           <div className="mx-auto w-full max-w-7xl px-4 md:px-6 py-12">
-            <h1 className="text-3xl font-extrabold tracking-tight text-white md:text-[40px] md:leading-[1.1] lg:col-span-2 lg:text-[64px] lg:leading-[1.125em]">
-              {siteMetadata.title}
-            </h1>
-            <div className="mt-8 max-w-lg space-y-6 text-lg leading-[1.4] text-gray-300 md:max-w-xl lg:text-xl">
-              <p>{siteMetadata.description}</p>
-            </div>
+            {children}
           </div>
         </div>
       </section>
