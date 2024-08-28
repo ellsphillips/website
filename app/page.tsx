@@ -4,9 +4,10 @@ import BlurFade from "@/components/animation/blur-fade";
 import { IconMapPin, IconBuildingBank } from "@tabler/icons-react";
 import DATA from "@/lib/data";
 import Nav from "@/components/nav";
+import ResumeSection from "@/components/resume";
 import Link from "next/link";
 
-const BLUR_FADE_DELAY = 0.1;
+const BLUR_FADE_DELAY = 0.05;
 
 const links = [{ href: "/blog", label: "Blog" }];
 
@@ -39,7 +40,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <span className="flex gap-2">
-              <IconBuildingBank /> Principal Software Engineer
+              <IconBuildingBank /> Software Engineer
             </span>
           </BlurFade>
         </div>
@@ -48,15 +49,12 @@ export default function Home() {
       <div>
         <div className="sticky top-0 self-center">
           <Nav>
-            <span className="font-bold">
-              <Link
-                href={"/"}
-                style={{ textDecoration: "none" }}
-                className="flex items-center justify-center w-6 h-6 p-4 font-mono [&>*]:no-underline border rounded-md border-white/5 hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors"
-              >
-                ~
-              </Link>
-            </span>
+            <Link
+              className="block bg-gradient-to-r from-sky-500/90 to-emerald-500/90 w-8 h-8 transition border border-transparent hover:scale-105"
+              href="/"
+            >
+              <span className="sr-only">{DATA.site.url}</span>
+            </Link>
 
             <div>
               {links.map((link) => (
@@ -72,9 +70,15 @@ export default function Home() {
           </Nav>
         </div>
 
-        <div className="h-full flex flex-col">
-          <main className="mx-auto max-w-7xl w-full px-6">Hello, world!</main>
-        </div>
+        <main className="mx-auto max-w-7xl w-full px-6">
+          <section id="work" className="space-y-8">
+            {Object.entries(DATA.resume).map(([section, items], i) => (
+              <BlurFade key={section} delay={BLUR_FADE_DELAY * (7 + i * 2)}>
+                <ResumeSection section={section} items={items} />
+              </BlurFade>
+            ))}
+          </section>
+        </main>
       </div>
     </>
   );

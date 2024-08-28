@@ -3,8 +3,6 @@
 import { Rain } from "@/components/animation/rain";
 import Image from "next/image";
 
-import BlurFade from "./animation/blur-fade";
-
 export default function Hero({ children }: { children: React.ReactNode }) {
   return (
     <Rain>
@@ -17,7 +15,6 @@ export default function Hero({ children }: { children: React.ReactNode }) {
                 <Image
                   src="/images/home.jpg"
                   alt="home hero image"
-                  objectFit="cover"
                   quality={100}
                   priority
                   width={2560}
