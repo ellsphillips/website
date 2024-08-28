@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import Image from "next/image";
 
 const ResumeEntry = (item: { title: string; date: string; logo?: string }) => {
   return (
@@ -12,7 +13,7 @@ const ResumeEntry = (item: { title: string; date: string; logo?: string }) => {
       {item.logo && (
         <Avatar className="rounded-none">
           <AvatarImage asChild src={item.logo}>
-            <img src={item.logo} alt="logo" />
+            <Image src={item.logo} alt="logo" width={12} height={12} />
           </AvatarImage>
           <AvatarFallback>N</AvatarFallback>
         </Avatar>
