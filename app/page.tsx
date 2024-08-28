@@ -72,8 +72,10 @@ export default function Home() {
 
         <main className="mx-auto max-w-7xl w-full px-6">
           <section id="work" className="space-y-8">
-            {Object.entries(DATA.resume).map(([section, items]) => (
-              <ResumeSection key={section} section={section} items={items} />
+            {Object.entries(DATA.resume).map(([section, items], i) => (
+              <BlurFade delay={BLUR_FADE_DELAY * (7 + i * 2)}>
+                <ResumeSection key={section} section={section} items={items} />
+              </BlurFade>
             ))}
           </section>
         </main>

@@ -46,22 +46,14 @@ const DATA = {
         date: "Aug 2022 — Mar 2024",
         logo: "/images/dluhc.svg",
         description:
-          "Principal Engineer with extensive experience leading cross-functional teams in the development of Government-wide spatial data infrastructure platforms, AI-powered applications, and secure data APIs. Proven track record in managing app deployments at scale, integrating machine learning for data quality assurance, and fostering a culture of continuous learning and innovation. Skilled in providing technical expertise, improving team practices, and representing data capabilities at high-profile events. Key projects include: \
-        Atlas: Led the design, build, and deployment of a spatial data platform to visualize UK national progress and Government investment. \
-        Funding Delivery AI: Developed an LLM-powered chat application to streamline funding delivery processes and provide real-time responses. \
-        LUDA: Created a secure data API to meet department-wide data requirements and drive user-focused solutions. \
-        LEVEL-UP!: Pioneered an open-source solution to enhance technical skills, support career development, and attract engineering talent.",
+          "Principal Engineer with extensive experience leading cross-functional teams in the development of Government-wide spatial data infrastructure platforms, AI-powered applications, and secure data APIs. Proven track record in managing app deployments at scale, integrating machine learning for data quality assurance, and fostering a culture of continuous learning and innovation. Skilled in providing technical expertise, improving team practices, and representing data capabilities at high-profile events.",
       },
       {
         title: "Office for National Statistics",
         date: "Jan 2020 — Aug 2022",
         logo: "/images/ons.svg",
         description:
-          "Senior Data Scientist with a background in developing and deploying machine learning models for the UK Census. Led a team of data scientists to develop and deploy machine learning models for the UK Census. Key projects include: \
-        Census 2021: Led the development of a machine learning model to predict household response rates, resulting in a 10% increase in response rates. \
-        Data Quality Assurance: Implemented a machine learning model to identify and correct data quality issues, improving data accuracy by 15%. \
-        Data Visualization: Created a data visualization tool to communicate complex data insights to non-technical stakeholders, resulting in improved decision-making. \
-        Data Governance: Developed a data governance framework to ensure data quality, security, and compliance with data protection regulations.",
+          "Led the development and deployment of advanced machine learning models and geospatial APIs to classify and map Mastercard's 128M UK bank accounts, achieving a 96% classification accuracy. Spearheaded the creation of a full-stack web application for visualizing UK firm-to-firm transactions and mentored colleagues in data science and software design. Transformed legacy systems into production pipelines for public pensions data, employing Agile methodologies. Designed a scalable app for departmental newsletters and innovated the classification of business survey responses using supervised machine learning, significantly improving matching capabilities. Developed a web scraper and image processing pipeline to enhance the ONS business register with critical metadata.",
       },
     ],
     qualifications: [
