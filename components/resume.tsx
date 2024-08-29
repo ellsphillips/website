@@ -6,12 +6,14 @@ import {
 } from "@/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Image from "next/image";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const ResumeEntry = (item: { title: string; date: string; logo?: string }) => {
   return (
     <div className="flex gap-4 group w-full mr-4">
       {item.logo && (
-        <Avatar className="rounded-none">
+        <Avatar className="rounded-[2px]">
           <AvatarImage asChild src={item.logo}>
             <Image src={item.logo} alt="logo" width={12} height={12} />
           </AvatarImage>
@@ -68,9 +70,9 @@ const ResumeSection = ({
                 />
               </AccordionTrigger>
               <AccordionContent>
-                <p className="text-gray-1000 dark:text-gray-100">
+                <Markdown remarkPlugins={[remarkGfm]}>
                   {item.description}
-                </p>
+                </Markdown>
               </AccordionContent>
             </AccordionItem>
           ) : (
