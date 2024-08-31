@@ -108,7 +108,7 @@ export default function Nav() {
                           variant="outline"
                           className="bg-slate-900/50 p-2 hover:bg-slate-700/50"
                         >
-                          <Link href={social.href}>
+                          <Link href={social.url}>
                             <social.icon />
                           </Link>
                         </Button>

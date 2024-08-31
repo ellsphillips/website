@@ -49,17 +49,17 @@ const DATA = {
   },
   socials: [
     {
-      href: "https://www.linkedin.com/in/elliott-phillips",
+      url: "https://www.linkedin.com/in/elliott-phillips",
       label: "LinkedIn",
       icon: IconBrandLinkedin,
     },
     {
-      href: "https://www.github.com/ellsphillips",
+      url: "https://www.github.com/ellsphillips",
       label: "GitHub",
       icon: IconBrandGithubFilled,
     },
     {
-      href: "mailto:elliott.phillips.dev@gmail.com",
+      url: "mailto:elliott.phillips.dev@gmail.com",
       label: "Email",
       icon: IconMailFilled,
     },
