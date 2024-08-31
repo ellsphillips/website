@@ -5,6 +5,7 @@ import { IconMapPin, IconBuildingBank } from "@tabler/icons-react";
 import DATA from "@/lib/data";
 import Nav from "@/components/nav";
 import ResumeSection from "@/components/resume";
+import Welcome from "@/components/welcome";
 
 const BLUR_FADE_DELAY = 0.05;
 
@@ -48,7 +49,9 @@ export default function Home() {
           <Nav />
         </div>
 
-        <main className="mx-auto max-w-7xl w-full px-6">
+        <main className="mx-auto max-w-7xl w-full px-6 space-y-12">
+          <Welcome />
+
           <section id="work" className="space-y-8">
             {Object.entries(DATA.resume).map(([section, items], i) => (
               <BlurFade key={section} delay={BLUR_FADE_DELAY * (7 + i * 2)}>

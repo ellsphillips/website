@@ -11,34 +11,9 @@ import { useEffect } from "react";
 import { clamp } from "@/lib/utils";
 import Link from "next/link";
 import DATA from "@/lib/data";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import Image from "next/image";
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconMail,
-} from "@tabler/icons-react";
 import { Button } from "./ui/button";
 
 const pages = [{ href: "/blog", label: "Blog" }];
-
-const socials = [
-  {
-    href: "https://www.github.com/ellsphillips",
-    label: "GitHub",
-    icon: IconBrandGithub,
-  },
-  {
-    href: "https://www.linkedin.com/in/elliott-phillips",
-    label: "LinkedIn",
-    icon: IconBrandLinkedin,
-  },
-  {
-    href: "mailto:elliott.phillips.dev@gmail.com",
-    label: "Email",
-    icon: IconMail,
-  },
-];
 
 function useBoundedScroll(threshold: number) {
   let { scrollY } = useScroll();
@@ -127,7 +102,7 @@ export default function Nav() {
                         ),
                       }}
                     >
-                      {socials.map((social) => (
+                      {DATA.socials.map((social) => (
                         <Button
                           key={`social-${social.label}`}
                           variant="outline"

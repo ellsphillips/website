@@ -1,3 +1,9 @@
+import {
+  IconBrandLinkedin,
+  IconBrandGithubFilled,
+  IconMailFilled,
+} from "@tabler/icons-react";
+
 export type Role = {
   title: string;
   date: string;
@@ -43,12 +49,19 @@ const DATA = {
   },
   socials: [
     {
-      name: "GitHub",
-      url: "www.github.com/ellsphillips",
+      href: "https://www.linkedin.com/in/elliott-phillips",
+      label: "LinkedIn",
+      icon: IconBrandLinkedin,
     },
     {
-      name: "LinkedIn",
-      url: "www.linkedin.com/in/elliott-phillips",
+      href: "https://www.github.com/ellsphillips",
+      label: "GitHub",
+      icon: IconBrandGithubFilled,
+    },
+    {
+      href: "mailto:elliott.phillips.dev@gmail.com",
+      label: "Email",
+      icon: IconMailFilled,
     },
   ],
   resume: {

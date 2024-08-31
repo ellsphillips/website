@@ -48,8 +48,8 @@ const ResumeSection = ({
   return (
     <div className="grid items-start place-content-center grid-cols-1 gap-6 md:grid-cols-8">
       <h4
-        className={`col-span-2 pt-8 text-lg font-bold text-black dark:text-slate-400 font-mono ${
-          items[0].description ? "md:pt-[1rem]" : "md:pt-0"
+        className={`col-span-2 text-lg font-bold text-black dark:text-slate-400 font-mono ${
+          items[0].description ? "md:pt-6" : "md:pt-0"
         } md:text-right md:text-base md:text-opacity-40`}
       >
         {section}
