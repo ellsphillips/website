@@ -4,10 +4,9 @@ import BlurFade from "@/components/animation/blur-fade";
 import { IconMapPin, IconBuildingBank } from "@tabler/icons-react";
 import DATA from "@/lib/data";
 import Nav from "@/components/nav";
-import ResumeSection from "@/components/resume";
+import { Resume } from "@/components/resume";
 import Welcome from "@/components/welcome";
-
-const BLUR_FADE_DELAY = 0.05;
+import { BLUR_FADE_DELAY } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -50,15 +49,13 @@ export default function Home() {
         </div>
 
         <main className="mx-auto max-w-7xl w-full px-6 space-y-12">
-          <Welcome />
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <Welcome />
+          </BlurFade>
 
-          <section id="work" className="space-y-8">
-            {Object.entries(DATA.resume).map(([section, items], i) => (
-              <BlurFade key={section} delay={BLUR_FADE_DELAY * (7 + i * 2)}>
-                <ResumeSection section={section} items={items} />
-              </BlurFade>
-            ))}
-          </section>
+          <BlurFade delay={BLUR_FADE_DELAY * 8}>
+            <Resume data={DATA.resume} />
+          </BlurFade>
         </main>
       </div>
     </>
