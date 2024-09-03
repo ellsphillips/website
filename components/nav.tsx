@@ -103,15 +103,13 @@ export default function Nav() {
                       }}
                     >
                       {DATA.socials.map((social) => (
-                        <Button
+                        <Link
                           key={`social-${social.label}`}
-                          variant="outline"
-                          className="bg-slate-900/50 p-2 hover:bg-slate-700/50"
+                          href={social.url}
+                          className="border border-input h-10 p-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground bg-slate-900/50 hover:bg-slate-700/50"
                         >
-                          <Link href={social.url}>
-                            <social.icon />
-                          </Link>
-                        </Button>
+                          <social.icon />
+                        </Link>
                       ))}
                     </motion.div>
 
