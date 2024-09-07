@@ -24,6 +24,8 @@ export default function Hero({ children }: { children: React.ReactNode }) {
                     height={1440}
                     style={{}}
                     className="size-full min-h-[48rem] -translate-x-32 sm:translate-x-0 overflow-visible rounded-lg object-cover md:-translate-y-36 lg:-translate-y-48 w-full -scale-x-100 brightness-[.75] lg:brightness-100"
+                    blurDataURL="/images/home.jpg"
+                    placeholder="blur"
                   />
                 </BlurFade>
               </div>

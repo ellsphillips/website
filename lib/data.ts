@@ -30,13 +30,13 @@ export type ResumeData = {
 
 const roleDescriptions = {
   lloyds: `
-  Senior Software Engineer with a focus on building and maintaining a suite of data-driven applications for the Group, mentoring junior developers, and developing platform capability on GCP. Responsible for leading the development of a new data product to deliver client-facing market insights across the UK. 
+  Senior Software Engineer with a focus on building and maintaining a suite of data-driven geospatial applications for Lloyds Banking Group, mentoring junior developers, and developing platform capability on GCP.
   `,
   dluhc: `
-  Principal Engineer with extensive experience leading cross-functional teams in the development of Government-wide spatial data infrastructure platforms, AI-powered applications, and secure data APIs. Proven track record in managing app deployments at scale, integrating machine learning for data quality assurance, and fostering a culture of continuous learning and innovation. Skilled in providing technical expertise, improving team practices, and representing data capabilities at high-profile events.
+  Principal Engineer with extensive experience leading cross-functional teams in the development of Government-wide spatial data infrastructure platforms, AI-powered applications, and secure data APIs. Managed several continuous deployment streams at scale and integrated machine learning capabilities for Ministerial Officials' and wider Government use. Consulted across department to provide technical guidance, improve developer experiences, and representing data capabilities at high-profile events.
   `,
   ons: `
-  Led the development and deployment of advanced machine learning models and geospatial APIs to classify and map Mastercard's 128M UK bank accounts, achieving a 96% classification accuracy. Spearheaded the creation of a full-stack web application for visualizing UK firm-to-firm transactions and mentored colleagues in data science and software design. Transformed legacy systems into production pipelines for public pensions data, employing Agile methodologies. Designed a scalable app for departmental newsletters and innovated the classification of business survey responses using supervised machine learning, significantly improving matching capabilities. Developed a web scraper and image processing pipeline to enhance the ONS business register with critical metadata.
+  Lead Developer of machine learning models and geospatial APIs to classify and map Mastercard's 128M UK bank accounts, achieving a 96% classification accuracy in business profiling and developed visualization cabilities for UK firm-to-firm transactions. Transformed legacy systems into production pipelines for public pensions data and technical profession communiciations. Classified business survey responses using supervised machine learning and image processing pipeline to enhance the ONS business register with critical metadata.
   `,
 };
 
@@ -113,7 +113,8 @@ const DATA = {
         date: "11-2022",
       },
       {
-        title: "Operational Researcher, Governmnt Operational Research Service",
+        title:
+          "Operational Researcher, Government Operational Research Service",
         date: "10-2021",
       },
       {

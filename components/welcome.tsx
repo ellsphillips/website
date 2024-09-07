@@ -9,6 +9,8 @@ const Welcome = () => {
         width={500}
         height={500}
         className="hidden rounded col-span-2 md:block"
+        blurDataURL="/headshot.webp"
+        placeholder="blur"
       />
       <div className="col-span-10 md:col-start-3 space-y-4 text-slate-300 text-[13pt] font-medium">
         <p>
