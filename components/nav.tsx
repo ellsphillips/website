@@ -11,7 +11,6 @@ import { useEffect } from "react";
 import { clamp } from "@/lib/utils";
 import Link from "next/link";
 import DATA from "@/lib/data";
-import { Button } from "./ui/button";
 
 const pages = [{ href: "/blog", label: "Blog" }];
 
@@ -106,6 +105,7 @@ export default function Nav() {
                         <Link
                           key={`social-${social.label}`}
                           href={social.url}
+                          aria-label={`Elliott's ${social.label}`}
                           className="border border-input h-10 p-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground bg-slate-900/50 hover:bg-slate-700/50"
                         >
                           <social.icon />

@@ -43,7 +43,7 @@ const SECTION_FACTORIES: Record<
   (entry: ResumeEntry) => React.ReactNode
 > = {
   work: (entry: ResumeEntry) => (
-    <ResumeAccordion entry={entry}>
+    <ResumeAccordion key={entry.title} entry={entry}>
       <Markdown
         className="prose dark:prose-dark text-base text-muted-foreground"
         remarkPlugins={[remarkGfm]}
@@ -107,7 +107,7 @@ const ResumeEntry = (item: { title: string; date: string; logo?: string }) => {
           {item.title}
         </strong>
         <span className="hidden md:flex flex-1 border-t border-gray-300 border-dashed shrink dark:border-gray-800" />
-        <span className="flex-none md:ml-auto self-start md:self-center font-mono text-quaternary inline-block text-sm text-gray-500">
+        <span className="flex-none md:ml-auto self-start md:self-center font-mono text-quaternary inline-block text-sm text-muted-foreground">
           {item.date}
         </span>
       </div>
@@ -129,13 +129,13 @@ export const ResumeSection = ({
 }) => {
   return (
     <div className="grid items-start place-content-center grid-cols-1 gap-6 md:grid-cols-8">
-      <h4
+      <h2
         className={`col-span-2 text-lg font-bold text-black dark:text-slate-400 font-mono ${
           items[0].description ? "md:pt-4" : "md:pt-0"
         } md:text-right md:text-base md:text-opacity-40`}
       >
         {section}
-      </h4>
+      </h2>
 
       <Accordion
         type="multiple"

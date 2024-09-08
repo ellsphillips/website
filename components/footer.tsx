@@ -36,6 +36,7 @@ export function Footer() {
               <Link
                 key={index}
                 href={social.url}
+                aria-label={`Elliott's ${social.label}`}
                 className="flex h-6 w-6 items-center justify-center text-neutral-400 transition-all duration-100 ease-linear hover:text-neutral-900 hover:underline hover:underline-offset-4 dark:font-medium dark:text-neutral-500 hover:dark:text-neutral-100"
               >
                 <social.icon />
