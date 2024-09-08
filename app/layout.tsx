@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import DATA from "@/lib/data";
 import { ThemeProvider } from "@/components/theme-provider";
+import { TailwindIndicator } from "@/components/ui/tailwind-indicator";
 import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function RootLayout({
       >
         {" "}
         <ThemeProvider attribute="class" defaultTheme="dark">
+          <TailwindIndicator />
           {children}
           <Footer />
         </ThemeProvider>
