@@ -3,6 +3,8 @@
 import { Rain } from "@/components/animation/rain";
 import Image from "next/image";
 
+import BlurFade from "@/components/animation/blur-fade";
+
 export default function Hero({ children }: { children: React.ReactNode }) {
   return (
     <Rain>
@@ -10,33 +12,40 @@ export default function Hero({ children }: { children: React.ReactNode }) {
         <div className="absolute bg-[rgb(18,22,36)] inset-0 -z-10" />
         <div className="absolute inset-0 -z-10">
           <div className="relative">
-            <div className="absolute inset-x-0 top-0 max-w-[1280px] overflow-hidden lg:bottom-auto lg:left-auto lg:right-0 lg:w-[80%]">
-              <div className="flex items-center aspect-square -translate-y-16 xl:-translate-y-36 2xl:-translate-y-64">
-                <Image
-                  src="/images/home.jpg"
-                  alt="home hero image"
-                  quality={100}
-                  priority
-                  width={2560}
-                  height={1440}
-                  className="absolute top-0 left-0 w-full min-h-[28rem] object-cover -scale-x-100"
-                />
+            <div className="absolute inset-x-0 top-0 min-h-full max-w-[1280px] lg:bottom-auto lg:left-auto lg:right-0">
+              <div className="flex items-center aspect-square -translate-y-16 xl:-translate-y-48">
+                <BlurFade yOffset={12} delay={0.25} duration={0.75}>
+                  <Image
+                    src="/images/home.jpg"
+                    alt="home hero image"
+                    quality={100}
+                    priority
+                    width={2560}
+                    height={1440}
+                    style={{}}
+                    className="size-full min-h-[48rem] -translate-x-32 sm:translate-x-0 overflow-visible rounded-lg object-cover md:-translate-y-36 lg:-translate-y-48 w-full -scale-x-100 brightness-[.75] lg:brightness-100"
+                    blurDataURL="/images/home.jpg"
+                    placeholder="blur"
+                  />
+                </BlurFade>
               </div>
               <div className="absolute -inset-px bg-slate-900/50" />
-              <div className="absolute -inset-px hidden bg-gradient-to-r from-slate-900 via-transparent to-transparent lg:block" />
+              <div className="absolute -inset-px bg-gradient-to-r from-slate-900 via-transparent to-transparent" />
             </div>
             <div className="relative flex justify-center overflow-hidden">
-              <Image
-                alt=""
-                fetchPriority="high"
-                width="2560"
-                height="1440"
-                decoding="async"
-                data-nimg="1"
-                className="hidden max-w-none lg:block lg:animate-fade-in delay-200"
-                style={{ color: "transparent" }}
-                src="/images/glow-desktop.webp"
-              />
+              <BlurFade yOffset={0}>
+                <Image
+                  alt=""
+                  fetchPriority="high"
+                  width="2560"
+                  height="1440"
+                  decoding="async"
+                  data-nimg="1"
+                  className="max-w-none animate-fade-in delay-200"
+                  style={{ color: "transparent" }}
+                  src="/images/glow-desktop.webp"
+                />
+              </BlurFade>
             </div>
           </div>
         </div>
