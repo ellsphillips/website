@@ -43,12 +43,12 @@ export default function Home() {
         </div>
       </Hero>
 
-      <div>
+      <main>
         <div className="sticky top-0 self-center z-[999]">
           <Nav />
         </div>
 
-        <main className="mx-auto max-w-7xl w-full px-6 space-y-12">
+        <div className="mx-auto max-w-7xl w-full px-6 space-y-12">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <Welcome />
           </BlurFade>
@@ -56,8 +56,8 @@ export default function Home() {
           <BlurFade delay={BLUR_FADE_DELAY * 8}>
             <Resume data={DATA.resume} />
           </BlurFade>
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 }
