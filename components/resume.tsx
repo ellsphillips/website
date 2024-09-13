@@ -12,7 +12,31 @@ import React from "react";
 import BlurFade from "./animation/blur-fade";
 import { BLUR_FADE_DELAY } from "@/lib/constants";
 import Link from "next/link";
-import { Button } from "./ui/button";
+
+const ReadMoreLink = ({ href }: { href: string }) => (
+  <Link
+    href={href}
+    className="group flex justify-end content-end items-center gap-1 pl-2.5 pr-0 transition-all hover:pr-2 py-1 rounded font-bold bg-inherit border text-current hover:text-primary hover:dark:text-white border-zinc-300 dark:border-slate-700 hover:bg-slate-200 hover:dark:bg-slate-800 duration-300 ease-in-out"
+  >
+    Read more
+    <svg
+      viewBox="0 0 24 24"
+      className="size-5 stroke-[3px] fill-none stroke-current opacity-50 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+    >
+      <line
+        x1="5"
+        y1="12"
+        x2="19"
+        y2="12"
+        className="scale-x-0 translate-x-[10px] group-hover:translate-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"
+      />
+      <polyline
+        points="12 5 19 12 12 19"
+        className="-translate-x-2 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
+      />
+    </svg>
+  </Link>
+);
 
 type ResumeEntry = {
   title: string;
@@ -75,17 +99,11 @@ const SECTION_FACTORIES: Record<
             className="rounded aspect-video w-full"
           />
         )}
-        <div className="flex items-center justify-end w-full">
-          {entry.url && (
-            <Button
-              key={`social-${entry.url}`}
-              variant="outline"
-              className="bg-slate-900/50 p-2 hover:bg-slate-700/50"
-            >
-              <Link href={entry.url}>Read more -&gt;</Link>
-            </Button>
-          )}
-        </div>
+        {entry.url && (
+          <div className="flex items-center justify-end w-full">
+            <ReadMoreLink href={entry.url} />
+          </div>
+        )}
       </div>
     </ResumeAccordion>
   ),
