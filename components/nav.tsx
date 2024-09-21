@@ -8,7 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect } from "react";
-import { clamp } from "@/lib/utils";
+import { clamp, cn } from "@/lib/utils";
 import Link from "next/link";
 import DATA from "@/lib/data";
 
@@ -36,7 +36,9 @@ function useBoundedScroll(threshold: number) {
   return { scrollYBounded, scrollYBoundedProgress };
 }
 
-export default function Nav() {
+interface NavProps extends React.ComponentProps<"div"> {}
+
+export default function Nav({ className, ...rest }: NavProps) {
   let { scrollYBoundedProgress } = useBoundedScroll(400);
   let scrollYBoundedProgressDelayed = useTransform(
     scrollYBoundedProgress,
@@ -62,7 +64,12 @@ export default function Nav() {
           }}
           className="flex h-20 shadow backdrop-blur-md"
         >
-          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6">
+          <div
+            className={cn(
+              "mx-auto flex w-full items-center justify-between",
+              className
+            )}
+          >
             <div className="flex items-center w-full">
               <div className="space-x-10 py-0.5 w-full">
                 <nav className="flex items-center justify-between">
