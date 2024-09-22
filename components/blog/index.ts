@@ -1,5 +1,7 @@
 import Header from "./header";
 
-export default {
+const components = {
   Header,
 };
+
+export default components;

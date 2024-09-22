@@ -50,7 +50,7 @@ export async function BlogBreadcrumbs({ page }: { page: string }) {
               <Separator />
 
               {posts.map((post) => (
-                <BreadcrumbLink href={`/blog/${post.slug}`}>
+                <BreadcrumbLink href={`/blog/${post.slug}`} key={post.slug}>
                   <DropdownMenuItem key={post.slug}>
                     {post.title}
                   </DropdownMenuItem>
