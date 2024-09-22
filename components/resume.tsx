@@ -69,7 +69,7 @@ const SECTION_FACTORIES: Record<
   work: (entry: ResumeEntry) => (
     <ResumeAccordion key={entry.title} entry={entry}>
       <Markdown
-        className="prose dark:prose-dark text-base text-muted-foreground"
+        className="max-w-full prose dark:prose-dark text-base text-muted-foreground"
         remarkPlugins={[remarkGfm]}
       >
         {entry.description}
@@ -80,11 +80,11 @@ const SECTION_FACTORIES: Record<
     <ResumeEntry key={entry.title} title={entry.title} date={entry.date} />
   ),
   projects: (entry: ResumeEntry) => (
-    <ResumeAccordion entry={entry}>
+    <ResumeAccordion key={entry.title} entry={entry}>
       <div className="space-y-4">
         <div className="flex flex-col justify-between">
           <Markdown
-            className="prose dark:prose-dark text-base text-muted-foreground"
+            className="max-w-full prose dark:prose-dark text-base text-muted-foreground"
             remarkPlugins={[remarkGfm]}
           >
             {entry.description}
