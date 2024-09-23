@@ -3,4 +3,5 @@ export interface Frontmatter {
   layout: string;
   topic: string;
   description: string;
+  date: string;
 }

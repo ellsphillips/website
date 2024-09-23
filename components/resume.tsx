@@ -1,3 +1,4 @@
+import BlurFade from "@/components/animation/blur-fade";
 import {
   Accordion,
   AccordionContent,
@@ -5,13 +6,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BLUR_FADE_DELAY } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import React from "react";
-import BlurFade from "./animation/blur-fade";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
-import Link from "next/link";
 
 const ReadMoreLink = ({ href }: { href: string }) => (
   <Link
