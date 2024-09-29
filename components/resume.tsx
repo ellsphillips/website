@@ -1,17 +1,17 @@
+import BlurFade from "@/components/animation/blur-fade";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BLUR_FADE_DELAY } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import React from "react";
-import BlurFade from "./animation/blur-fade";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
-import Link from "next/link";
 
 const ReadMoreLink = ({ href }: { href: string }) => (
   <Link
@@ -69,7 +69,7 @@ const SECTION_FACTORIES: Record<
   work: (entry: ResumeEntry) => (
     <ResumeAccordion key={entry.title} entry={entry}>
       <Markdown
-        className="prose dark:prose-dark text-base text-muted-foreground"
+        className="max-w-full prose dark:prose-dark text-base text-muted-foreground"
         remarkPlugins={[remarkGfm]}
       >
         {entry.description}
@@ -80,11 +80,11 @@ const SECTION_FACTORIES: Record<
     <ResumeEntry key={entry.title} title={entry.title} date={entry.date} />
   ),
   projects: (entry: ResumeEntry) => (
-    <ResumeAccordion entry={entry}>
+    <ResumeAccordion key={entry.title} entry={entry}>
       <div className="space-y-4">
         <div className="flex flex-col justify-between">
           <Markdown
-            className="prose dark:prose-dark text-base text-muted-foreground"
+            className="max-w-full prose dark:prose-dark text-base text-muted-foreground"
             remarkPlugins={[remarkGfm]}
           >
             {entry.description}

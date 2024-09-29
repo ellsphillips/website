@@ -45,7 +45,7 @@ export default function Home() {
 
       <main>
         <div className="sticky top-0 self-center z-[999]">
-          <Nav />
+          <Nav className="px-6 max-w-7xl" />
         </div>
 
         <div className="mx-auto max-w-7xl w-full px-6 space-y-12">
