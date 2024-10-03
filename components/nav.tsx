@@ -66,65 +66,24 @@ export default function Nav({ className, ...rest }: NavProps) {
         >
           <div
             className={cn(
-              "mx-auto flex w-full items-center justify-between",
+              "mx-auto flex w-full items-center justify-between px-4 md:px-6",
               className
             )}
           >
             <div className="flex items-center w-full">
               <div className="space-x-10 py-0.5 w-full">
                 <nav className="flex items-center justify-between">
-                  <motion.div
-                    style={{
-                      scale: useTransform(
-                        scrollYBoundedProgressDelayed,
-                        [0, 1],
-                        [1, 0.85]
-                      ),
-                    }}
-                  >
-                    <Link href="/">
-                      <div
-                        className="block bg-gradient-to-r from-sky-500/90 to-emerald-500/90 w-8 h-8 rounded-[2px] transition border border-transparent hover:scale-110 -z-50"
-                        style={{
-                          scale: +useTransform(
-                            scrollYBoundedProgressDelayed,
-                            [0, 1],
-                            [1, 0.5]
-                          ),
-                        }}
-                      />
-                      <span className="sr-only">{DATA.site.url}</span>
-                    </Link>
-                  </motion.div>
+                  <Link href="/">
+                    <div className="block bg-gradient-to-r from-sky-500/90 to-emerald-500/90 w-8 h-8 rounded-[2px] transition border border-transparent hover:scale-110 -z-50" />
+                    <span className="sr-only">{DATA.site.url}</span>
+                  </Link>
 
                   <div className="flex items-center gap-8">
-                    <motion.div
-                      className="space-x-2"
-                      style={{
-                        scale: useTransform(
-                          scrollYBoundedProgressDelayed,
-                          [0, 1],
-                          [1, 0.85]
-                        ),
-                      }}
-                    >
-                      {DATA.socials.map((social) => (
-                        <Link
-                          key={`social-${social.label}`}
-                          href={social.url}
-                          aria-label={`Elliott's ${social.label}`}
-                          className="border border-input h-10 p-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground bg-slate-900/50 hover:bg-slate-700/50"
-                        >
-                          <social.icon />
-                        </Link>
-                      ))}
-                    </motion.div>
-
                     {pages.map((page) => (
                       <Link
                         key={`nav-link-${page.label}`}
                         href={page.href}
-                        className="flex justify-center text-sm font-medium text-slate-400 hover:text-slate-200 transition-colors"
+                        className="flex justify-center text-sm font-semibold text-slate-400 hover:text-slate-200 transition-colors"
                       >
                         {page.label}
                       </Link>
