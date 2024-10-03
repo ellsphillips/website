@@ -1,4 +1,5 @@
 import { ChevronDownIcon, SlashIcon } from "lucide-react";
+import { blog } from "@/app/source";
 
 import {
   Breadcrumb,
@@ -15,10 +16,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
-import getAllBlogFrontmatter from "@/lib/content";
 
 export async function BlogBreadcrumbs({ page }: { page: string }) {
-  const posts = await getAllBlogFrontmatter();
+  const posts = blog.getPages();
 
   return (
     <Breadcrumb className="text-sm font-medium text-gray-400 lg:text-base">
@@ -57,9 +57,9 @@ export async function BlogBreadcrumbs({ page }: { page: string }) {
                   <Separator />
 
                   {posts.map((post) => (
-                    <BreadcrumbLink href={`/blog/${post.slug}`} key={post.slug}>
-                      <DropdownMenuItem key={post.slug}>
-                        {post.title}
+                    <BreadcrumbLink href={post.url} key={post.url}>
+                      <DropdownMenuItem key={post.url}>
+                        {post.data.title}
                       </DropdownMenuItem>
                     </BreadcrumbLink>
                   ))}

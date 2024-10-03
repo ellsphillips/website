@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Author = () => {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-4 items-center">
       <Avatar>
         <AvatarImage src="/author.jpeg" />
         <AvatarFallback>EP</AvatarFallback>

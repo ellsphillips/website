@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 
 export interface Heading {
   depth: number;
-  value: string;
+  title: string;
+  url: string;
 }
 
 const padHeading = (depth: number) => {
@@ -22,11 +23,7 @@ const padHeading = (depth: number) => {
   }
 };
 
-const TableOfContents = ({
-  headings,
-}: {
-  headings: { depth: number; value: string }[];
-}) => {
+const TableOfContents = ({ headings }: { headings: Heading[] }) => {
   const pathname = usePathname();
 
   return (
@@ -37,19 +34,19 @@ const TableOfContents = ({
       <div className="mt-6 flex flex-col gap-4">
         {headings.map((heading) => (
           <Link
-            key={heading.value}
+            key={heading.title}
             className={cn(
               "font-medium transition text-gray-500 hover:text-white -mt-2.5 text-sm",
               padHeading(heading.depth)
             )}
             href={`
-              #${heading.value
+              #${heading.title
                 .toLowerCase()
                 .replace(/[^a-z0-9]/g, "-")
                 .replace(/-+/g, "-")}
             `}
           >
-            {heading.value}
+            {heading.title}
           </Link>
         ))}
       </div>
