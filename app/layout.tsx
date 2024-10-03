@@ -6,6 +6,7 @@ import DATA from "@/lib/data";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TailwindIndicator } from "@/components/ui/tailwind-indicator";
 import { Footer } from "@/components/footer";
+import { RootProvider } from "next-docs-ui/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,19 +21,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "flex min-h-full flex-col antialiased bg-slate-900 text-neutral-50 font-sans",
           inter.className
         )}
       >
-        {" "}
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <TailwindIndicator />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <RootProvider>
+          {" "}
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            <TailwindIndicator />
+            {children}
+            <Footer />
+          </ThemeProvider>{" "}
+        </RootProvider>
       </body>
     </html>
   );

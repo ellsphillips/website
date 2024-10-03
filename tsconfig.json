@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
@@ -16,10 +17,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "node_modules/@mdx-js/react"
-    ],
     "plugins": [
       {
         "name": "next"
@@ -29,15 +26,13 @@
       "@/*": [
         "./*"
       ]
-    },
-    "strictNullChecks": true
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "content/example.mdx"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
