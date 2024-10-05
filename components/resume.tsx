@@ -1,17 +1,17 @@
-import BlurFade from "@/components/animation/blur-fade";
+import BlurFade from "@/components/animation/blur-fade"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+} from "@/components/ui/accordion"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { BLUR_FADE_DELAY } from "@/lib/constants"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+import Markdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 
 const ReadMoreLink = ({ href }: { href: string }) => (
   <Link
@@ -36,23 +36,23 @@ const ReadMoreLink = ({ href }: { href: string }) => (
       />
     </svg>
   </Link>
-);
+)
 
 type ResumeEntry = {
-  title: string;
-  date: string;
-  description?: string;
-  logo?: string;
-  url?: string;
-  thumbnail?: string;
-};
+  title: string
+  date: string
+  description?: string
+  logo?: string
+  url?: string
+  thumbnail?: string
+}
 
 const ResumeAccordion = ({
   entry,
   children,
 }: {
-  entry: ResumeEntry;
-  children: React.ReactNode;
+  entry: ResumeEntry
+  children: React.ReactNode
 }) => (
   <AccordionItem key={entry.title} value={entry.title}>
     <AccordionTrigger className="hover:no-underline">
@@ -60,7 +60,7 @@ const ResumeAccordion = ({
     </AccordionTrigger>
     <AccordionContent>{children}</AccordionContent>
   </AccordionItem>
-);
+)
 
 const SECTION_FACTORIES: Record<
   string,
@@ -107,7 +107,7 @@ const SECTION_FACTORIES: Record<
       </div>
     </ResumeAccordion>
   ),
-};
+}
 
 const ResumeEntry = (item: { title: string; date: string; logo?: string }) => {
   return (
@@ -130,20 +130,20 @@ const ResumeEntry = (item: { title: string; date: string; logo?: string }) => {
         </span>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const ResumeSection = ({
   section,
   items,
 }: {
-  section: string;
+  section: string
   items: {
-    title: string;
-    date: string;
-    logo?: string;
-    description?: string;
-  }[];
+    title: string
+    date: string
+    logo?: string
+    description?: string
+  }[]
 }) => {
   return (
     <div className="grid items-start place-content-center grid-cols-1 gap-6 md:grid-cols-8">
@@ -160,13 +160,13 @@ export const ResumeSection = ({
         className="col-span-10 md:col-start-3 space-y-4"
       >
         {items.map((item) => {
-          const factory = SECTION_FACTORIES[section];
-          return factory ? factory(item) : null;
+          const factory = SECTION_FACTORIES[section]
+          return factory ? factory(item) : null
         })}
       </Accordion>
     </div>
-  );
-};
+  )
+}
 
 export const Resume = ({ data }: { data: Record<string, ResumeEntry[]> }) => {
   return (
@@ -177,5 +177,5 @@ export const Resume = ({ data }: { data: Record<string, ResumeEntry[]> }) => {
         </BlurFade>
       ))}
     </section>
-  );
-};
+  )
+}

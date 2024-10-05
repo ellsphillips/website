@@ -1,4 +1,4 @@
-import { AnnotationHandler, InnerLine } from "codehike/code";
+import { AnnotationHandler, InnerLine } from "codehike/code"
 
 export const hover: AnnotationHandler = {
   name: "hover",
@@ -10,4 +10,4 @@ export const hover: AnnotationHandler = {
       data-line={annotation?.query || ""}
     />
   ),
-};
+}

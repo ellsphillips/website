@@ -1,7 +1,7 @@
 export interface Frontmatter {
-  title: string;
-  layout: string;
-  topic: string;
-  description: string;
-  date: string;
+  title: string
+  layout: string
+  topic: string
+  description: string
+  date: string
 }

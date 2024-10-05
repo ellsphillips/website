@@ -1,9 +1,9 @@
-import { AnnotationHandler, BlockAnnotation, InnerLine } from "codehike/code";
+import { AnnotationHandler, BlockAnnotation, InnerLine } from "codehike/code"
 
 export const mark: AnnotationHandler = {
   name: "mark",
   Line: ({ annotation, ...props }) => {
-    const color = getColor(annotation);
+    const color = getColor(annotation)
     return (
       <div
         style={{
@@ -15,10 +15,10 @@ export const mark: AnnotationHandler = {
       >
         <InnerLine merge={props} className="px-4 sm:px-6 flex-1" />
       </div>
-    );
+    )
   },
   Inline: ({ annotation, children }) => {
-    const color = getColor(annotation);
+    const color = getColor(annotation)
     return (
       <span
         style={{
@@ -29,13 +29,13 @@ export const mark: AnnotationHandler = {
       >
         {children}
       </span>
-    );
+    )
   },
-};
+}
 
 function getColor(annotation?: { query?: string }) {
-  const n = Number(annotation?.query || "2") % colors.length;
-  return colors[n] || annotation?.query;
+  const n = Number(annotation?.query || "2") % colors.length
+  return colors[n] || annotation?.query
 }
 
 const colors = [
@@ -45,4 +45,4 @@ const colors = [
   "#8b5cf6",
   "#d946ef",
   "#ec4899",
-];
+]

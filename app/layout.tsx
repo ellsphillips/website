@@ -1,31 +1,31 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
-import DATA from "@/lib/data";
-import { ThemeProvider } from "@/components/theme-provider";
-import { TailwindIndicator } from "@/components/ui/tailwind-indicator";
-import { Footer } from "@/components/footer";
-import { RootProvider } from "next-docs-ui/provider";
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { cn } from "@/lib/utils"
+import DATA from "@/lib/data"
+import { ThemeProvider } from "@/components/theme-provider"
+import { TailwindIndicator } from "@/components/ui/tailwind-indicator"
+import { Footer } from "@/components/footer"
+import { RootProvider } from "next-docs-ui/provider"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: DATA.site.title,
   description: DATA.site.description,
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "flex min-h-full flex-col antialiased bg-slate-900 text-neutral-50 font-sans",
-          inter.className
+          inter.className,
         )}
       >
         <RootProvider>
@@ -38,5 +38,5 @@ export default function RootLayout({
         </RootProvider>
       </body>
     </html>
-  );
+  )
 }

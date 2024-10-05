@@ -1,21 +1,21 @@
-import { Block, CodeBlock, parseProps } from "codehike/blocks";
-import { Pre, RawCode, highlight } from "codehike/code";
-import { z } from "zod";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { THEME } from "@/lib/constants";
-import { CodeIcon } from "../annotations/icons";
+import { Block, CodeBlock, parseProps } from "codehike/blocks"
+import { Pre, RawCode, highlight } from "codehike/code"
+import { z } from "zod"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { THEME } from "@/lib/constants"
+import { CodeIcon } from "../annotations/icons"
 
-const Schema = Block.extend({ tabs: z.array(CodeBlock) });
+const Schema = Block.extend({ tabs: z.array(CodeBlock) })
 export async function CodeWithTabs(props: unknown) {
-  const { tabs } = parseProps(props, Schema);
-  return <CodeTabs tabs={tabs} />;
+  const { tabs } = parseProps(props, Schema)
+  return <CodeTabs tabs={tabs} />
 }
 
 export async function CodeTabs(props: { tabs: RawCode[] }) {
-  const { tabs } = props;
+  const { tabs } = props
   const highlighted = await Promise.all(
-    tabs.map((tab) => highlight(tab, THEME.dark))
-  );
+    tabs.map((tab) => highlight(tab, THEME.dark)),
+  )
 
   return (
     <Tabs
@@ -45,5 +45,5 @@ export async function CodeTabs(props: { tabs: RawCode[] }) {
         </TabsContent>
       ))}
     </Tabs>
-  );
+  )
 }

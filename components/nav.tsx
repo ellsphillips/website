@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   motion,
@@ -6,45 +6,45 @@ import {
   useMotionValue,
   useScroll,
   useTransform,
-} from "framer-motion";
-import { useEffect } from "react";
-import { clamp, cn } from "@/lib/utils";
-import Link from "next/link";
-import DATA from "@/lib/data";
+} from "framer-motion"
+import { useEffect } from "react"
+import { clamp, cn } from "@/lib/utils"
+import Link from "next/link"
+import DATA from "@/lib/data"
 
-const pages = [{ href: "/blog", label: "Blog" }];
+const pages = [{ href: "/blog", label: "Blog" }]
 
 function useBoundedScroll(threshold: number) {
-  let { scrollY } = useScroll();
-  let scrollYBounded = useMotionValue(0);
+  let { scrollY } = useScroll()
+  let scrollYBounded = useMotionValue(0)
   let scrollYBoundedProgress = useTransform(
     scrollYBounded,
     [0, threshold],
-    [0, 1]
-  );
+    [0, 1],
+  )
 
   useEffect(() => {
     return scrollY.on("change", (current) => {
-      let previous = scrollY.getPrevious() ?? 0;
-      let diff = current - previous;
-      let newScrollYBounded = scrollYBounded.get() + diff;
+      let previous = scrollY.getPrevious() ?? 0
+      let diff = current - previous
+      let newScrollYBounded = scrollYBounded.get() + diff
 
-      scrollYBounded.set(clamp(newScrollYBounded, 0, threshold));
-    });
-  }, [threshold, scrollY, scrollYBounded]);
+      scrollYBounded.set(clamp(newScrollYBounded, 0, threshold))
+    })
+  }, [threshold, scrollY, scrollYBounded])
 
-  return { scrollYBounded, scrollYBoundedProgress };
+  return { scrollYBounded, scrollYBoundedProgress }
 }
 
 interface NavProps extends React.ComponentProps<"div"> {}
 
 export default function Nav({ className, ...rest }: NavProps) {
-  let { scrollYBoundedProgress } = useBoundedScroll(400);
+  let { scrollYBoundedProgress } = useBoundedScroll(400)
   let scrollYBoundedProgressDelayed = useTransform(
     scrollYBoundedProgress,
     [0, 0.75, 1],
-    [0, 0, 1]
-  );
+    [0, 0, 1],
+  )
 
   return (
     <div className="mx-auto flex w-full flex-1 overflow-hidden text-slate-600 z-[999] mb-8">
@@ -54,7 +54,7 @@ export default function Nav({ className, ...rest }: NavProps) {
             backgroundColor: useMotionTemplate`rgb(${"37 43 61"} / ${useTransform(
               scrollYBoundedProgressDelayed,
               [0, 1],
-              [1, 0.33]
+              [1, 0.33],
             )})`,
           }}
           className="flex h-16 shadow backdrop-blur-md"
@@ -62,7 +62,7 @@ export default function Nav({ className, ...rest }: NavProps) {
           <div
             className={cn(
               "mx-auto flex w-full items-center justify-between px-4 md:px-6",
-              className
+              className,
             )}
           >
             <div className="flex items-center w-full">
@@ -91,5 +91,5 @@ export default function Nav({ className, ...rest }: NavProps) {
         </motion.header>
       </div>
     </div>
-  );
+  )
 }

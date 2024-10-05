@@ -1,19 +1,19 @@
-import { blog } from "@/app/source";
-import { notFound } from "next/navigation";
-import Header from "@/components/blog/header";
-import Nav from "@/components/nav";
-import TableOfContents from "@/components/blog/table-of-contents";
-import PreviousNext from "@/components/blog/prev-next";
-import { cn } from "@/lib/utils";
+import { blog } from "@/app/source"
+import { notFound } from "next/navigation"
+import Header from "@/components/blog/header"
+import Nav from "@/components/nav"
+import TableOfContents from "@/components/blog/table-of-contents"
+import PreviousNext from "@/components/blog/prev-next"
+import { cn } from "@/lib/utils"
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const page = blog.getPage([params.slug]);
+  const page = blog.getPage([params.slug])
 
   if (page == null) {
-    notFound();
+    notFound()
   }
 
-  const MDX = page.data.exports.default;
+  const MDX = page.data.exports.default
 
   return (
     <>
@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <article
           className={cn(
             "dark:prose-invert prose lg:prose-lg !w-full",
-            "[&_h2]:scroll-m-24 [&_h3]:scroll-m-24"
+            "[&_h2]:scroll-m-24 [&_h3]:scroll-m-24",
           )}
         >
           <MDX />
@@ -42,11 +42,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </aside>
       </main>
     </>
-  );
+  )
 }
 
 export async function generateStaticParams() {
   return blog.getPages().map((page) => ({
     slug: page.slugs[0],
-  }));
+  }))
 }

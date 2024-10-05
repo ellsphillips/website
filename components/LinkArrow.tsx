@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 interface LinkArrowProps {
-  direction?: "left" | "right";
+  direction?: "left" | "right"
 }
 
 const LinkArrow: React.FC<LinkArrowProps> = ({ direction = "right" }) => {
@@ -12,7 +12,7 @@ const LinkArrow: React.FC<LinkArrowProps> = ({ direction = "right" }) => {
         "size-5 stroke-[3px] fill-none stroke-current opacity-50 group-hover:opacity-100 transition-all duration-300 ease-in-out",
         direction === "left"
           ? "-scale-x-100 group-hover:rotate-45 group-hover:translate-x-1"
-          : "group-hover:-rotate-45 group-hover:-translate-x-1"
+          : "group-hover:-rotate-45 group-hover:-translate-x-1",
       )}
     >
       <line
@@ -27,7 +27,7 @@ const LinkArrow: React.FC<LinkArrowProps> = ({ direction = "right" }) => {
         className="-translate-x-2 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default LinkArrow;
+export default LinkArrow

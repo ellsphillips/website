@@ -1,5 +1,5 @@
-import { ChevronDownIcon, SlashIcon } from "lucide-react";
-import { blog } from "@/app/source";
+import { ChevronDownIcon, SlashIcon } from "lucide-react"
+import { blog } from "@/app/source"
 
 import {
   Breadcrumb,
@@ -8,17 +8,17 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@/components/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/ui/dropdown-menu"
+import { Separator } from "@/components/ui/separator"
 
 export async function BlogBreadcrumbs({ page }: { page: string }) {
-  const posts = blog.getPages();
+  const posts = blog.getPages()
 
   return (
     <Breadcrumb className="text-sm font-medium text-gray-400 lg:text-base">
@@ -76,5 +76,5 @@ export async function BlogBreadcrumbs({ page }: { page: string }) {
         )}
       </BreadcrumbList>
     </Breadcrumb>
-  );
+  )
 }

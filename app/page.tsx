@@ -1,12 +1,12 @@
-import Hero from "@/components/hero";
-import BlurFadeText from "@/components/animation/blur-fade-text";
-import BlurFade from "@/components/animation/blur-fade";
-import { IconMapPin, IconBuildingBank } from "@tabler/icons-react";
-import DATA from "@/lib/data";
-import Nav from "@/components/nav";
-import { Resume } from "@/components/resume";
-import Welcome from "@/components/welcome";
-import { BLUR_FADE_DELAY } from "@/lib/constants";
+import Hero from "@/components/hero"
+import BlurFadeText from "@/components/animation/blur-fade-text"
+import BlurFade from "@/components/animation/blur-fade"
+import { IconMapPin, IconBuildingBank } from "@tabler/icons-react"
+import DATA from "@/lib/data"
+import Nav from "@/components/nav"
+import { Resume } from "@/components/resume"
+import Welcome from "@/components/welcome"
+import { BLUR_FADE_DELAY } from "@/lib/constants"
 
 export default function Home() {
   return (
@@ -59,5 +59,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  );
+  )
 }

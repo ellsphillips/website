@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import Image from "next/image";
-import DATA from "@/lib/data";
+import Link from "next/link"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+import Image from "next/image"
+import DATA from "@/lib/data"
 
 export function Footer() {
   return (
@@ -49,5 +49,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

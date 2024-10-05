@@ -1,12 +1,12 @@
-import Author from "@/components/blog/author";
-import Image from "next/image";
-import { BlogBreadcrumbs } from "@/components/blog/breadcrumbs";
-import DateTime from "@/components/blog/date-time";
+import Author from "@/components/blog/author"
+import Image from "next/image"
+import { BlogBreadcrumbs } from "@/components/blog/breadcrumbs"
+import DateTime from "@/components/blog/date-time"
 
 interface HeaderProps extends React.ComponentProps<"div"> {
-  title: string;
-  description: string;
-  date?: Date;
+  title: string
+  description: string
+  date?: Date
 }
 
 const Header = ({
@@ -47,7 +47,7 @@ const Header = ({
         <Author />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

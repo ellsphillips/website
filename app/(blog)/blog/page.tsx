@@ -1,11 +1,11 @@
-import Link from "next/link";
-import { blog } from "@/app/source";
-import Header from "@/components/blog/header";
-import Nav from "@/components/nav";
-import LinkArrow from "@/components/LinkArrow";
+import Link from "next/link"
+import { blog } from "@/app/source"
+import Header from "@/components/blog/header"
+import Nav from "@/components/nav"
+import LinkArrow from "@/components/LinkArrow"
 
 export default function BlogIndex() {
-  const month = getMonths();
+  const month = getMonths()
 
   return (
     <>
@@ -24,11 +24,11 @@ export default function BlogIndex() {
         ))}
       </main>
     </>
-  );
+  )
 }
 
 function MonthGroup({ month }: { month: Month }) {
-  const date = new Date(month.year, month.month, 1);
+  const date = new Date(month.year, month.month, 1)
   return (
     <div className="space-y-4 mb-8">
       <h2 className="text-sm text-primary/60 mb-4 uppercase">
@@ -52,53 +52,53 @@ function MonthGroup({ month }: { month: Month }) {
         </Link>
       ))}
     </div>
-  );
+  )
 }
 
 type Month = {
-  month: number;
-  year: number;
-  pages: ReturnType<typeof blog.getPages>;
-};
+  month: number
+  year: number
+  pages: ReturnType<typeof blog.getPages>
+}
 
 function getMonths(): Month[] {
-  const pages = blog.getPages().filter((page) => page.data.draft !== true);
+  const pages = blog.getPages().filter((page) => page.data.draft !== true)
 
-  const months: ReturnType<typeof getMonths> = [];
+  const months: ReturnType<typeof getMonths> = []
 
   pages.forEach((page) => {
-    const date = page.data.date;
-    const month = date.getMonth();
-    const year = date.getFullYear();
+    const date = page.data.date
+    const month = date.getMonth()
+    const year = date.getFullYear()
 
     const existingMonth = months.find(
-      (m) => m.month === month && m.year === year
-    );
+      (m) => m.month === month && m.year === year,
+    )
     if (existingMonth) {
-      existingMonth.pages.push(page);
+      existingMonth.pages.push(page)
     } else {
       months.push({
         month,
         year,
         pages: [page],
-      });
+      })
     }
-  });
+  })
 
   // Sort months
   months.sort((a, b) => {
     if (a.year !== b.year) {
-      return b.year - a.year;
+      return b.year - a.year
     }
-    return b.month - a.month;
-  });
+    return b.month - a.month
+  })
 
   // Sort pages in each month
   months.forEach((month) => {
     month.pages.sort((a, b) => {
-      return b.data.date.getTime() - a.data.date.getTime();
-    });
-  });
+      return b.data.date.getTime() - a.data.date.getTime()
+    })
+  })
 
-  return months;
+  return months
 }

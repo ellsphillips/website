@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { blog } from "@/app/source";
-import LinkArrow from "../LinkArrow";
+import Link from "next/link"
+import { blog } from "@/app/source"
+import LinkArrow from "../LinkArrow"
 
 const PreviousNext = ({ slug }: { slug: string }) => {
-  const pages = blog.getPages();
+  const pages = blog.getPages()
   const pagesByDate = pages.sort((a, b) => {
-    return a.data.date.getTime() - b.data.date.getTime();
-  });
-  const index = pagesByDate.findIndex((page) => page.slugs[0] === slug);
-  const [prev, next] = [pagesByDate[index - 1], pagesByDate[index + 1]];
+    return a.data.date.getTime() - b.data.date.getTime()
+  })
+  const index = pagesByDate.findIndex((page) => page.slugs[0] === slug)
+  const [prev, next] = [pagesByDate[index - 1], pagesByDate[index + 1]]
 
   return (
     <div className="flex flex-col lg:flex-row justify-between mt-8 -mx-2">
@@ -49,7 +49,7 @@ const PreviousNext = ({ slug }: { slug: string }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PreviousNext;
+export default PreviousNext

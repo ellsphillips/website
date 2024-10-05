@@ -2,31 +2,31 @@ import {
   IconBrandLinkedin,
   IconBrandGithubFilled,
   IconMailFilled,
-} from "@tabler/icons-react";
+} from "@tabler/icons-react"
 
 export type Role = {
-  title: string;
-  date: string;
-  logo: `/images/${string}.svg`;
-  description: string;
-};
+  title: string
+  date: string
+  logo: `/images/${string}.svg`
+  description: string
+}
 
 export type Publication = {
-  title: string;
-  date: string;
-  url?: string;
-};
+  title: string
+  date: string
+  url?: string
+}
 
 export type SiteMetadata = {
-  title: string;
-  description: string;
-  url: string;
-};
+  title: string
+  description: string
+  url: string
+}
 
 export type ResumeData = {
-  roles: Role[];
-  publications: Publication[];
-};
+  roles: Role[]
+  publications: Publication[]
+}
 
 const roleDescriptions = {
   lloyds: `
@@ -38,7 +38,7 @@ const roleDescriptions = {
   ons: `
   Lead Developer of machine learning models and geospatial APIs to classify and map Mastercard's 128M UK bank accounts, achieving a 96% classification accuracy in business profiling and developed visualization cabilities for UK firm-to-firm transactions. Transformed legacy systems into production pipelines for public pensions data and technical profession communiciations. Classified business survey responses using supervised machine learning and image processing pipeline to enhance the ONS business register with critical metadata.
   `,
-};
+}
 
 const projectDescriptions = {
   dluhcAtlas: `
@@ -47,7 +47,7 @@ const projectDescriptions = {
   economicNetworks: `
   Lead Data Scientist for the Economic Networks collaboration project between the Office for National Statistics and The Turing Institute, delivering innovation and economic insights to Cabinet Office and No. 10. Generated new and ground-breaking spatial-economic data assets to inform Government decision-making and provide insight into economic supply chains, business resilience, and recovery in response to national crises, e.g. COVID-19, fuel, and cost of living.
   `,
-};
+}
 
 const DATA = {
   site: {
@@ -142,6 +142,6 @@ const DATA = {
       },
     ],
   },
-};
+}
 
-export default DATA;
+export default DATA

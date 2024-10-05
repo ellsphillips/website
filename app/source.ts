@@ -1,7 +1,7 @@
-import { map } from "@/.map";
-import { createMDXSource, defaultSchemas } from "next-docs-mdx";
-import { loader } from "next-docs-zeta/source";
-import { z } from "zod";
+import { map } from "@/.map"
+import { createMDXSource, defaultSchemas } from "next-docs-mdx"
+import { loader } from "next-docs-zeta/source"
+import { z } from "zod"
 
 export const blog = loader({
   baseUrl: "/blog",
@@ -16,4 +16,4 @@ export const blog = loader({
       }),
     },
   }),
-});
+})

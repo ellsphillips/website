@@ -1,7 +1,7 @@
-import type { MDXComponents } from "mdx/types";
-import { Code, InlineCode } from "@/components/mdx/code/code";
-import { CodeWithTabs } from "@/components/mdx/code/tabs";
-import { HoverContainer, Link } from "@/components/mdx/code/mentions";
+import type { MDXComponents } from "mdx/types"
+import { Code, InlineCode } from "@/components/mdx/code/code"
+import { CodeWithTabs } from "@/components/mdx/code/tabs"
+import { HoverContainer, Link } from "@/components/mdx/code/mentions"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -11,5 +11,5 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     CodeWithTabs,
     HoverContainer,
     a: Link,
-  };
+  }
 }

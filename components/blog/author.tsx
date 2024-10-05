@@ -1,6 +1,6 @@
-import DATA from "@/lib/data";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
+import DATA from "@/lib/data"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Link from "next/link"
 
 const Author = () => {
   return (
@@ -21,7 +21,7 @@ const Author = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Author;
+export default Author

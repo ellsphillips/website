@@ -1,15 +1,15 @@
-import { AnnotationHandler, InlineAnnotationComponent } from "codehike/code";
+import { AnnotationHandler, InlineAnnotationComponent } from "codehike/code"
 import {
   TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/tooltip"
 
 export const tooltip: AnnotationHandler = {
   name: "tooltip",
   Inline: ({ children, annotation }) => {
-    const { query, data } = annotation;
+    const { query, data } = annotation
     return (
       <TooltipProvider delayDuration={300}>
         <Tooltip>
@@ -26,6 +26,6 @@ export const tooltip: AnnotationHandler = {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-    );
+    )
   },
-};
+}
