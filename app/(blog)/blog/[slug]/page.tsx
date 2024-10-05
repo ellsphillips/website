@@ -4,6 +4,7 @@ import Header from "@/components/blog/header";
 import Nav from "@/components/nav";
 import TableOfContents from "@/components/blog/table-of-contents";
 import PreviousNext from "@/components/blog/prev-next";
+import { cn } from "@/lib/utils";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const page = blog.getPage([params.slug]);
@@ -24,8 +25,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <div className="w-full sticky top-0 self-center z-[999]">
         <Nav className="max-w-5xl" />
       </div>
-      <main className="flex gap-8 mx-auto max-w-5xl w-full px-4 md:px-6 scroll-smooth">
-        <article className="dark:prose-invert prose lg:prose-lg !w-full">
+      <main className="flex gap-8 mx-auto max-w-5xl w-full px-4 md:px-6">
+        <article
+          className={cn(
+            "dark:prose-invert prose lg:prose-lg !w-full",
+            "[&_h2]:scroll-m-24 [&_h3]:scroll-m-24"
+          )}
+        >
           <MDX />
         </article>
         <aside className="ml-auto hidden w-full max-w-64 md:block shrink-0">
