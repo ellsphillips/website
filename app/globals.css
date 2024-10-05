@@ -97,6 +97,12 @@ html {
 .hover-container:has([data-hover="one"]:hover)
   [data-line]:not([data-line="one"]),
 .hover-container:has([data-hover="two"]:hover)
-  [data-line]:not([data-line="two"]) {
+  [data-line]:not([data-line="two"]),
+.hover-container:has([data-hover="three"]:hover)
+  [data-line]:not([data-line="three"]),
+.hover-container:has([data-hover="four"]:hover)
+  [data-line]:not([data-line="four"]),
+.hover-container:has([data-hover="five"]:hover)
+  [data-line]:not([data-line="five"]) {
   opacity: 0.5;
 }

@@ -21,7 +21,7 @@ const Header = ({
       className="relative -mt-20 overflow-hidden pb-10 pt-20 shadow-md shadow-gray-950/[.15] border-b-2 border-sky-200"
       {...rest}
     >
-      <div className="absolute flex justify-center overflow-hidden -z-10">
+      <div className="absolute flex justify-center overflow-hidden -z-10 h-full w-auto inset-y-0 scale-150 top-1/3">
         <Image
           alt="Glow background"
           priority

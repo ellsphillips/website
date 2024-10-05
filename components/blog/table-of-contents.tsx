@@ -27,7 +27,7 @@ const TableOfContents = ({ headings }: { headings: Heading[] }) => {
   const pathname = usePathname();
 
   return (
-    <div className="hidden lg:block sticky top-20 w-64 shrink-0 pt-6">
+    <div className="hidden md:block sticky top-20 w-64 shrink-0 pt-6">
       <p className="text-sm font-semibold uppercase tracking-widest text-gray-300">
         Contents
       </p>

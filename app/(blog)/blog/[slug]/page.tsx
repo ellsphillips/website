@@ -23,11 +23,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <div className="w-full sticky top-0 self-center z-[999]">
         <Nav className="max-w-5xl" />
       </div>
-      <main className="flex gap-8 mx-auto max-w-5xl w-full px-6 scroll-smooth">
-        <article className="dark:prose-invert prose lg:prose-lg">
+      <main className="flex gap-8 mx-auto max-w-5xl w-full px-4 md:px-6 scroll-smooth">
+        <article className="dark:prose-invert prose lg:prose-lg !w-full">
           <MDX />
         </article>
-        <aside className="ml-auto hidden w-full max-w-[260px] lg:block">
+        <aside className="ml-auto hidden w-full max-w-64 md:block shrink-0">
           <nav className="sticky top-20">
             <TableOfContents headings={page.data.exports.toc} />
           </nav>
