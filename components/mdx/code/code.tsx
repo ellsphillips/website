@@ -25,6 +25,36 @@ import { tooltip } from "../annotations/tooltip";
 import { hover } from "../annotations/hover";
 import { THEME } from "@/lib/constants";
 
+const styleCodeTitle = (path: string) => {
+  if (!path.includes("/")) {
+    return <span className="text-editor-tab-active-foreground">{path}</span>;
+  }
+
+  const renderPathPart = (part: string, isFirst: boolean, index: number) => (
+    <span
+      key={index}
+      className={
+        isFirst ? "text-muted-foreground" : "text-editor-tab-active-foreground"
+      }
+    >
+      {part}
+    </span>
+  );
+
+  const joinWithSeparator = (elements: JSX.Element[]) =>
+    elements.reduce((prev, curr) => (
+      <>
+        {prev}
+        <span className="text-muted-foreground -mx-2">/</span>
+        {curr}
+      </>
+    ));
+
+  const parts = path.split("/");
+  const styledParts = parts.map((part, i) => renderPathPart(part, i === 0, i));
+  return joinWithSeparator(styledParts);
+};
+
 export async function InlineCode({ codeblock }: { codeblock: RawCode }) {
   const highlighted = await highlight(codeblock, THEME.dark);
   return (
@@ -95,11 +125,13 @@ export function HighCode({
   const pre = (
     <Pre
       code={h}
-      className="!my-0 py-2 !px-0 rounded-none group flex-1 selection:bg-editor-selection-background"
+      className={cn(
+        // remove space around code
+        "!my-0 py-2 !px-0",
+        // given styles
+        "rounded-none group flex-1 selection:bg-editor-selection-background bg-editor-background"
+      )}
       handlers={handlers}
-      style={{
-        backgroundColor: "var(--editor-background)",
-      }}
     />
   );
 
@@ -107,7 +139,7 @@ export function HighCode({
     return (
       <div
         className={cn(
-          "border border-editor-border rounded overflow-hidden my-2",
+          "border border-editor-border rounded overflow-x-auto my-2",
           className
         )}
         style={
@@ -123,7 +155,7 @@ export function HighCode({
         >
           <div className="text-tab-active text-sm flex items-center gap-3">
             <CodeIcon title={title} />
-            <span>{title}</span>
+            {styleCodeTitle(title)}
           </div>
           {flags.includes("c") && (
             <CopyButton text={h.code} className="ml-auto" />
