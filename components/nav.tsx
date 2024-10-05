@@ -51,18 +51,13 @@ export default function Nav({ className, ...rest }: NavProps) {
       <div className="flex-1">
         <motion.header
           style={{
-            height: useTransform(
-              scrollYBoundedProgressDelayed,
-              [0, 1],
-              [80, 60]
-            ),
             backgroundColor: useMotionTemplate`rgb(${"37 43 61"} / ${useTransform(
               scrollYBoundedProgressDelayed,
               [0, 1],
               [1, 0.33]
             )})`,
           }}
-          className="flex h-20 shadow backdrop-blur-md"
+          className="flex h-16 shadow backdrop-blur-md"
         >
           <div
             className={cn(
