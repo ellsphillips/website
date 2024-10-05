@@ -2,6 +2,7 @@ import Link from "next/link";
 import { blog } from "@/app/source";
 import Header from "@/components/blog/header";
 import Nav from "@/components/nav";
+import LinkArrow from "@/components/LinkArrow";
 
 export default function BlogIndex() {
   const month = getMonths();
@@ -43,22 +44,7 @@ function MonthGroup({ month }: { month: Month }) {
             <h2 className="text-xl font-bold text-pretty group-hover:text-sky-400 transition-colors">
               {page.data.title}
             </h2>
-            <svg
-              viewBox="0 0 24 24"
-              className="size-5 stroke-[3px] fill-none stroke-current opacity-50 group-hover:opacity-100 group-hover:-rotate-45 transition-all duration-300 ease-in-out"
-            >
-              <line
-                x1="5"
-                y1="12"
-                x2="19"
-                y2="12"
-                className="scale-x-0 translate-x-[10px] group-hover:translate-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"
-              />
-              <polyline
-                points="12 5 19 12 12 19"
-                className="-translate-x-2 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
-              />
-            </svg>
+            <LinkArrow />
           </span>
           <p className="text-muted-foreground text-pretty">
             {page.data.description}
