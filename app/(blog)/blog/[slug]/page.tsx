@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/blog/header";
 import Nav from "@/components/nav";
 import TableOfContents from "@/components/blog/table-of-contents";
+import PreviousNext from "@/components/blog/prev-next";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const page = blog.getPage([params.slug]);
@@ -30,6 +31,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <aside className="ml-auto hidden w-full max-w-64 md:block shrink-0">
           <nav className="sticky top-20">
             <TableOfContents headings={page.data.exports.toc} />
+            <PreviousNext slug={params.slug} />
           </nav>
         </aside>
       </main>
