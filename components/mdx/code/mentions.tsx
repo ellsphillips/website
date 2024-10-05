@@ -1,4 +1,5 @@
 import React from "react";
+import CodeMentionHoverLink from "@/components/mdx/code/mentions-hover-link";
 
 export function HoverContainer(props: { children: React.ReactNode }) {
   return <div className="hover-container">{props.children}</div>;
@@ -8,12 +9,9 @@ export function Link(props: { href?: string; children?: React.ReactNode }) {
   if (props.href?.startsWith("hover:")) {
     const hover = props.href.slice("hover:".length);
     return (
-      <span
-        className="underline decoration-dotted underline-offset-4"
-        data-hover={hover}
-      >
+      <CodeMentionHoverLink data-hover={hover}>
         {props.children}
-      </span>
+      </CodeMentionHoverLink>
     );
   } else {
     return <a {...props} />;
