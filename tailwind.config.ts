@@ -1,5 +1,6 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
+/** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
   content: [
@@ -19,6 +20,14 @@ const config = {
     },
     extend: {
       colors: {
+        "editor-rangeHighlightBackground": "#f87171",
+        "editor-background": "var(editor-background)",
+        "editor-border": "var(--editor-border)",
+        "editor-selection-background": "var(--editor-selection)",
+        "editor-header-background": "var(--editor-header-background)",
+        "editor-tab-active-foreground": "var(--editor-tab-active-foreground)",
+        "editor-tab-active-background": "var(--editor-tab-active-background)",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,6 +84,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config;
+} satisfies Config
 
-export default config;
+export default config

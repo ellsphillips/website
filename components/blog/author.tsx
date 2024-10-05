@@ -1,10 +1,10 @@
-import DATA from "@/lib/data";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
+import DATA from "@/lib/data"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Link from "next/link"
 
 const Author = () => {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-4 items-center">
       <Avatar>
         <AvatarImage src="/author.jpeg" />
         <AvatarFallback>EP</AvatarFallback>
@@ -21,7 +21,7 @@ const Author = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Author;
+export default Author

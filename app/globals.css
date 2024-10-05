@@ -57,13 +57,52 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  --editor-background: #020617;
+  --editor-border: #334155;
+  --editor-selection: #3a3d41;
+  --editor-tab-active: #d7dae0;
+  --editor-tab-inactive: #94a3b8;
+  --editor-header-background: #1e293b;
+}
+
+.ruler-group:has([data-hover="1"]:hover) [data-hover="1"] > .bg {
+  opacity: 1;
+}
+.ruler-group:has([data-hover="2"]:hover) [data-hover="2"] > .bg {
+  opacity: 1;
+}
+.ruler-group:has([data-hover="3"]:hover) [data-hover="3"] > .bg {
+  opacity: 1;
+}
+.ruler-group:has([data-hover="4"]:hover) [data-hover="4"] > .bg {
+  opacity: 1;
+}
+.ruler-group:has([data-hover="5"]:hover) [data-hover="5"] > .bg {
+  opacity: 1;
+}
+.ruler-group:has([data-hover="6"]:hover) [data-hover="6"] > .bg {
+  opacity: 1;
+}
+
+.hover-container:has([data-hover="one"]:hover)
+  [data-line]:not([data-line="one"]),
+.hover-container:has([data-hover="two"]:hover)
+  [data-line]:not([data-line="two"]),
+.hover-container:has([data-hover="three"]:hover)
+  [data-line]:not([data-line="three"]),
+.hover-container:has([data-hover="four"]:hover)
+  [data-line]:not([data-line="four"]),
+.hover-container:has([data-hover="five"]:hover)
+  [data-line]:not([data-line="five"]) {
+  opacity: 0.5;
 }

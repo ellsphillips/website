@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { Rain } from "@/components/animation/rain";
-import Image from "next/image";
+import { Rain } from "@/components/animation/rain"
+import Image from "next/image"
 
-import BlurFade from "@/components/animation/blur-fade";
+import BlurFade from "@/components/animation/blur-fade"
 
 export default function Hero({ children }: { children: React.ReactNode }) {
   return (
@@ -57,5 +57,5 @@ export default function Hero({ children }: { children: React.ReactNode }) {
         </div>
       </section>
     </Rain>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import Header from "./header";
+import Header from "./header"
 
 const components = {
   Header,
-};
+}
 
-export default components;
+export default components

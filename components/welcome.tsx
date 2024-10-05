@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/image"
 
 const Welcome = () => {
   return (
@@ -39,7 +39,7 @@ const Welcome = () => {
         </p>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Welcome;
+export default Welcome
